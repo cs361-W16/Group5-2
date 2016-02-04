@@ -118,8 +118,25 @@ $( '.columnOfCards .cardLocation' ).html("");
         $( '#c3 .l'+key ).html(val.value + val.suit);
     });
 
-
-
+    if(game.error == true){
+        var div = document.getElementById('Error-div');
+        if(div === null){
+            //console.log("Error");
+            var div = document.createElement('div');
+            div.id = 'Error-div';
+            var text = document.createElement('h4');
+            text.innerHTML = 'Error: You cannot remove that card';
+            div.appendChild(text);
+            document.body.appendChild(div);
+        }
+    }
+    else{
+        var div = document.getElementById('Error-div');
+        if(div === null){}
+        else{
+            div.remove();
+        }
+    }
 }
 
 $.getJSON("http://localhost:8080/game", function( data ) {
@@ -143,17 +160,16 @@ $.ajax({
 
 
 function removeCard(colNumber){
-$.ajax({
-type: "POST",
-url: "/removeCard/"+colNumber,
-data: JSON.stringify(game),
-success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
-game = data;
-display(data);},
-contentType:"application/json; charset=utf-8",
-dataType:"json",
-});
-
+    $.ajax({
+        type: "POST",
+        url: "/removeCard/"+colNumber,
+        data: JSON.stringify(game),
+        success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+        game = data;
+        display(data);},
+        contentType:"application/json; charset=utf-8",
+        dataType:"json",
+    });
 }
 
 
