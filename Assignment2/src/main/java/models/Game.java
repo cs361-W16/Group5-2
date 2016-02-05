@@ -9,6 +9,8 @@ import java.util.Random;
  */
 public class Game {
 
+    public boolean error;
+
     public java.util.List<Card> deck = new ArrayList<>();
 
     public java.util.List<java.util.List<Card>> cols = new ArrayList<>();
@@ -19,41 +21,8 @@ public class Game {
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
+        error = false;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //I like space between my methods
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     public void buildDeck() {
@@ -64,31 +33,6 @@ public class Game {
             deck.add(new Card(i,Suit.Spades));
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-    //I like space between my methods
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     public void shuffle() {
@@ -133,6 +77,10 @@ public class Game {
             }
             if (removeCard) {
                 this.cols.get(columnNumber).remove(this.cols.get(columnNumber).size() - 1);
+                error = false;
+            }
+            else{
+                error = true;
             }
         }
     }
