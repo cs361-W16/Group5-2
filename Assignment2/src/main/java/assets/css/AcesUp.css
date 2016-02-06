@@ -16,3 +16,14 @@ font-weight: bold;
 width: 100px;
 background-color:#F0F0F0;
 }
+
+#table{
+float:left;
+width: 500px;
+}
+
+#panel{
+float:left;
+width: 300px;
+height: 500px;
+}
