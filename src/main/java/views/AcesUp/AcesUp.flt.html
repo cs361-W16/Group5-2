@@ -219,7 +219,11 @@ $( '.columnOfCards .cardLocation' ).html("");
     }
 }
 
-$.getJSON("http://localhost:8080/game", function( data ) {
+//Make 2 buttons on the page, add 2 javascript functions that are called when buttons is clicked
+//The first will send the code below to /gameE
+//The second will send the code below to /gameS
+
+$.getJSON("http://localhost:8080/gameE", function( data ) {
 display(data);
 game = data;
 });

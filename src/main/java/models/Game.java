@@ -25,12 +25,25 @@ public class Game {
     }
 
 
-    public void buildDeck() {
-        for(int i = 2; i < 15; i++){
-            deck.add(new Card(i,Suit.Clubs));
-            deck.add(new Card(i,Suit.Hearts));
-            deck.add(new Card(i,Suit.Diamonds));
-            deck.add(new Card(i,Suit.Spades));
+    public void buildDeck(char Choice) {
+        //char english[13] = {'2','3','4','5','6','7','8','9','10','j','q','K'};
+        //char spanish[10] = {'A','2','3','4','5','6','7','j','k','K'};
+        if(Choice == 'E') {
+            for (int i = 2; i < 15; i++) {
+                deck.add(new Card(i, Suit.Clubs));
+                deck.add(new Card(i, Suit.Hearts));
+                deck.add(new Card(i, Suit.Diamonds));
+                deck.add(new Card(i, Suit.Spades));
+            }
+        }
+        else if(Choice == 'S'){
+            for (int i = 0; i < 11; i++){
+                deck.add(new Card(i, Suit.Coins));
+                deck.add(new Card(i, Suit.Cups));
+                deck.add(new Card(i, Suit.Swords));
+                deck.add(new Card(i, Suit.Clubs));
+
+            }
         }
     }
 

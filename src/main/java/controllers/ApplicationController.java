@@ -36,9 +36,21 @@ public class ApplicationController {
         return Results.html().template("views/AcesUp/AcesUp.flt.html");
     }
     
-    public Result gameGet(){
+    public Result gameGetE(){
+        char choice = 'E';
         Game g = new Game();
-        g.buildDeck();
+        g.buildDeck(choice);
+        g.shuffle();
+        g.dealFour();
+        g.error = false;
+
+        return Results.json().render(g);
+    }
+
+    public Result gameGetS(){
+        char choice = 'S';
+        Game g = new Game();
+        g.buildDeck(choice);
         g.shuffle();
         g.dealFour();
         g.error = false;
