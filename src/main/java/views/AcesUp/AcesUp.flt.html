@@ -132,10 +132,23 @@ $( '.columnOfCards .cardLocation' ).html("");
         {
         $('#c0 .l'+key).css("background-color","green");
         }
-        else
+        else if(val.suit == "Spades")
         {
         $('#c0 .l'+key).css("background-color","orange");
         }
+        else if(val.suit == "Coins")
+        {
+        $('#c0 .l'+key).css("background-color","grey");
+        }
+        else if(val.suit == "Swords")
+        {
+        $('#c0 .l'+key).css("background-color","gold");
+        }
+        else if(val.suit == "Cups")
+        {
+        $('#c0 .l'+key).css("background-color","blue");
+        }
+
     });
 
  $.each(game.cols[1], function( key, val ) {
@@ -152,10 +165,23 @@ $( '.columnOfCards .cardLocation' ).html("");
         {
         $('#c1 .l'+key).css("background-color","green");
         }
-        else
+        else if(val.suit == "Spades")
         {
         $('#c1 .l'+key).css("background-color","orange");
         }
+        else if(val.suit == "Coins")
+        {
+        $('#c1 .l'+key).css("background-color","grey");
+        }
+        else if(val.suit== "Cups")
+        {
+        $('#c1 .l'+key).css("background-color","blue");
+        }
+        else if(val.suit == "Swords")
+        {
+        $('#c1 .l'+key).css("background-color","gold");
+        }
+
     });
 
  $.each(game.cols[2], function( key, val ) {
@@ -172,10 +198,23 @@ $( '.columnOfCards .cardLocation' ).html("");
         {
         $('#c2 .l'+key).css("background-color","green");
         }
-        else
+        else if(val.suit == "Spades")
         {
         $('#c2 .l'+key).css("background-color","orange");
         }
+        else if(val.suit == "Coins")
+        {
+        $('#c2 .l'+key).css("background-color","grey");
+        }
+        else if(val.suit == "Swords")
+        {
+        $('#c2 .l'+key).css("background-color","gold");
+        }
+        else if(val.suit == "Cups")
+        {
+        $('#c2 .l'+key).css("background-color","blue");
+        }
+
     });
 
  $.each(game.cols[3], function( key, val ) {
@@ -192,10 +231,23 @@ $( '.columnOfCards .cardLocation' ).html("");
         {
         $('#c3 .l'+key).css("background-color","green");
         }
-        else
+        else if(val.suit == "Spades")
         {
         $('#c3 .l'+key).css("background-color","orange");
         }
+        else if(val.suit == "Coins")
+        {
+        $('#c3 .l'+key).css("background-color","gery");
+        }
+        else if(val.suit == "Cups")
+        {
+        $('#c3 .l'+key).css("background-color","blue");
+        }
+        else if(val.suit == "Swords")
+        {
+        $('#c3 .l'+key).css("background-color","gold");
+        }
+
     });
 
     if(game.error == true){
