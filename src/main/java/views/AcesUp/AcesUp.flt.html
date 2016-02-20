@@ -7,10 +7,10 @@
 
 <table id = "table">
     <tr class="title">
-        <td>Column0</td>
-        <td >Column1</td>
+        <td>Column1</td>
         <td >Column2</td>
         <td >Column3</td>
+        <td >Column4</td>
     </tr>
 
     <tr><td class="columnOfCards" id="c0">
@@ -88,7 +88,9 @@
     </tr>
 </table>
 <div id = "panel">
-<button id="dealButton">Deal</button>
+    <button id = "gameS">Spanish Deck</button>
+    <button id = "gameE">Regular Deck</button>
+    <button id="dealButton">Deal</button>
 <BR>Remove from: <button id="Remove1">Column1</button><button id="Remove2">Column2</button><button id="Remove3">Column3</button><button id="Remove4">Column4</button>
 
 <BR>Move from column
@@ -275,9 +277,17 @@ $( '.columnOfCards .cardLocation' ).html("");
 //The first will send the code below to /gameE
 //The second will send the code below to /gameS
 
-$.getJSON("http://localhost:8080/gameE", function( data ) {
-display(data);
-game = data;
+$("#gameE").click(function(){
+    $.getJSON("http://localhost:8080/gameE", function( data ) {
+        display(data);
+        game = data;
+    });
+});
+$("#gameS").click(function(){
+    $.getJSON("http://localhost:8080/gameS", function( data ) {
+        display(data);
+        game = data;
+    });
 });
 
 
