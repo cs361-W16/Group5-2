@@ -311,15 +311,27 @@ function removeCard(colNumber){
 
 $("#Remove1").click(function(){
     removeCard(0);
+    $.each(game.cols[0], function( key, val ){
+        $('#c0 .l'+key).css("background-color","#F0F0F0");
+    });
 });
 $("#Remove2").click(function(){
     removeCard(1);
+    $.each(game.cols[1], function( key, val ){
+        $('#c1 .l'+key).css("background-color","#F0F0F0");
+    });
 });
 $("#Remove3").click(function(){
     removeCard(2);
+    $.each(game.cols[2], function( key, val ){
+        $('#c2 .l'+key).css("background-color","#F0F0F0");
+    });
 });
 $("#Remove4").click(function(){
     removeCard(3);
+    $.each(game.cols[3], function( key, val ){
+        $('#c3 .l'+key).css("background-color","#F0F0F0");
+    });
 });
 
 
@@ -336,6 +348,9 @@ $.ajax({
   contentType:"application/json; charset=utf-8",
   dataType:"json",
 });
+$.each(game.cols[colFrom], function( key, val ){
+        $('#c'+colFrom + ' .l'+key).css("background-color","#F0F0F0");
+    });
 });
 
 
